@@ -57,7 +57,7 @@ const Dashboard = () => {
               toast.success(
                 `Danger! High gas Value of ${newDocData.smokeValue} detected at ${newDocData.time}`,
                 {
-                  position: "top-right",
+                  position: "bottom-center",
                   autoClose: 5000,
                   hideProgressBar: false,
                   closeOnClick: true,
@@ -112,7 +112,7 @@ const Dashboard = () => {
               toast.success(
                 `Alert! Your Water Tank is low with value ${newDocData.waterLevel} detected at ${newDocData.time}. Please fill or else you cant have bath!.`,
                 {
-                  position: "top-right",
+                  position: "bottom-center",
                   autoClose: 5000,
                   hideProgressBar: false,
                   closeOnClick: true,
@@ -167,7 +167,7 @@ const Dashboard = () => {
               toast.success(
                 `Its ${newDocData.temperature}! Switch on the Cooler!.`,
                 {
-                  position: "top-right",
+                  position: "bottom-center",
                   autoClose: 5000,
                   hideProgressBar: false,
                   closeOnClick: true,
@@ -216,7 +216,7 @@ const Dashboard = () => {
             const newDocData = change.doc.data();
             if (newDocData.ttc && new Date() - newDocData.ttc < 25000) {
               toast.success(`Intruder Alert!.`, {
-                position: "top-right",
+                position: "bottom-center",
                 autoClose: 5000,
                 hideProgressBar: false,
                 closeOnClick: true,
