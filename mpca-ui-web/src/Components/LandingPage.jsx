@@ -34,7 +34,7 @@ const LandingPage = () => {
             </h1>
 
             <h1 class="mb-2 text-[60px] font-extrabold leading-none tracking-tight text-gray-900 md:text-9xl  dark:text-white">
-              Welcome to smartGhar
+              Welcome to casaDigital
             </h1>
           </motion.div>
           <motion.div
@@ -42,7 +42,7 @@ const LandingPage = () => {
             className="flex flex-col gap-3  justify-center px-6"
           >
             <p className="my-1 text-md text-gray-800 md:text-[28px]">
-              smartGhar has been built as our MPCA Semester 4 Project. It makes
+              casaDigital has been built as our MPCA Semester 4 Project. It makes
               use of the iOt technology, namely the ESP8266 and Arduino-Uno as
               the microcontrollers. The Arduino Uno houses(pun intended) the
               components and transmits the data to the ESP8266 that recieves the
