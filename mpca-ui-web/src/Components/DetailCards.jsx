@@ -11,6 +11,13 @@ const WaterCard = ({ card }) => {
       >
         {card?.waterLevel}
       </p>
+      <p
+        className={`${
+          card?.situation === 'LOW' ? "text-rose-600" : "text-violet-300"
+        } text-[22px]`}
+      >
+        {card?.situation}
+      </p>
       <p>{card?.time}</p>
     </div>
   );
