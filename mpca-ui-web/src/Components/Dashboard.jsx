@@ -20,6 +20,7 @@ import {
   headTextAnimation,
 } from "../../src/framer-motion/motion";
 import { useSnapshot } from "valtio";
+import DetailCards from "./DetailCards";
 const Dashboard = () => {
   const [smokeDocuments, setSmokeDocuments] = useState([]);
   const [waterDocuments, setWaterDocuments] = useState([]);
@@ -51,7 +52,7 @@ const Dashboard = () => {
             if (
               newDocData.ttc &&
               new Date() - newDocData.ttc < 25000 &&
-              newDocData.smokeValue > 400
+              newDocData.smokeValue > 390
             ) {
               toast.success(
                 `Danger! High gas Value of ${newDocData.smokeValue} detected at ${newDocData.time}`,
@@ -239,45 +240,71 @@ const Dashboard = () => {
     return () => unsubscribe();
   }, []);
   return (
-    <motion.section {...slideAnimation("right")}>
-      <motion.div {...headContainerAnimation}>
-        <motion.div
-          {...headTextAnimation}
-          className="px-6 py-2 flex flex-col justify-center"
-        >
-          <h1 class="my-4 text-[60px] font-extrabold leading-none tracking-tight text-gray-900 md:text-9xl  dark:text-white">
-            Dashboard
-          </h1>
-          {tempDocuments.length !== 0 && (
-            <h1 class="my-4 text-[20px] font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl  dark:text-white">
-              Welcome! How Are You today? The Temperature is:{" "}
-              <span className="text-gray-600 mx-3 py-4">{tempDocuments[tempDocuments.length - 1].temperature}</span>
-            </h1>
-          )}
-        </motion.div>
-        <motion.div className="dropdown dropdown-hover self-center relative left-7 md:left-9">
-          <label tabIndex={0} className="btn m-1">
-            Hover
-          </label>
-          <ul
-            tabIndex={0}
-            className="dropdown-content menu  text-white p-2 shadow bg-base-100 rounded-box w-52"
+    <>
+      <motion.section {...slideAnimation("right")}>
+        <motion.div {...headContainerAnimation}>
+          <motion.div
+            {...headTextAnimation}
+            className="px-6 py-2 flex flex-col justify-center"
           >
-            <li onClick={() => setViewing("gasDetails")}>
-              <a>Gas Details</a>
-            </li>
-            <li onClick={() => setViewing("waterDetails")}>
-              <a>Water Details</a>
-            </li>
-            <li onClick={() => setViewing("temperatureDetails")}>
-              <a>Temperature Details</a>
-            </li>
-          </ul>
-        </motion.div>
-      </motion.div>
+            <h1 class="my-4 text-[60px] font-extrabold leading-none tracking-tight text-gray-900 md:text-9xl  dark:text-white">
+              Dashboard
+            </h1>
+            {tempDocuments.length !== 0 && (
+              <h1 class="my-4 text-[20px] font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl  dark:text-white">
+                Welcome! How Are You today? The Temperature is:{" "}
+                <span className="text-gray-600 mx-3 py-4">
+                  {
+                    tempDocuments[
+                      Math.floor(Math.random() * tempDocuments.length + 1)
+                    ]?.temperature
+                  }
+                </span>
+              </h1>
+            )}
+          </motion.div>
+          <motion.div className="dropdown dropdown-hover self-center relative left-7 md:left-9">
+            <label tabIndex={0} className="btn m-1">
+              {viewing === null ? "See Details" : viewing}
+            </label>
+            <ul
+              tabIndex={0}
+              className="dropdown-content menu  text-white p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li onClick={() => setViewing("Gas Details")}>
+                <a>Gas Details</a>
+              </li>
+              <li onClick={() => setViewing("Water Details")}>
+                <a>Water Details</a>
+              </li>
+              <li onClick={() => setViewing("Temperature Details")}>
+                <a>Temperature Details</a>
+              </li>
+              <li onClick={() => setViewing("Motion Details")}>
+                <a>Motion Details</a>
+              </li>
+            </ul>
 
-      <AnimatePresence></AnimatePresence>
-    </motion.section>
+            {smokeDocuments.length !== 0 &&
+            waterDocuments.length !== 0 &&
+            tempDocuments.length !== 0 ? (
+              viewing === "Gas Details" ? (
+                <DetailCards details={smokeDocuments} type = 'Gas Details'/>
+              ) : viewing === "Water Details" ? (
+                <DetailCards details={waterDocuments} type = 'Water Details'/>
+              ) : viewing === "Temperature Details" ? (
+                <DetailCards details={tempDocuments} type = 'Temperature Details'/>
+              ) : (
+                <h1>Not Available</h1>
+              )
+            ) : (
+              <h1>Getting Details</h1>
+            )}
+          </motion.div>
+        </motion.div>
+      </motion.section>
+      <ToastContainer />
+    </>
   );
 };
 export default Dashboard;

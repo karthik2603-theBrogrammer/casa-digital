@@ -8,7 +8,7 @@ import { AnimatePresence } from "framer-motion";
 function App() {
   const snap = useSnapshot(state);
   return (
-    <div className="h-[100vh] w-[100vw] overflow-hidden bg-gradient-to-r from-violet-500 to-fuchsia-500">
+    <div className="h-[100vh] w-[100vw] overflow-x-hidden bg-gradient-to-r from-violet-500 to-fuchsia-500">
       <AnimatePresence className="">
         {snap.page === "intro" && <LandingPage />}
         {snap.page === "dashboard" && <Dashboard />}
