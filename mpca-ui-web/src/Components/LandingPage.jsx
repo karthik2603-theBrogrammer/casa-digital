@@ -52,16 +52,7 @@ const LandingPage = () => {
               frontend web user interface you are seeing currently.
             </p>
 
-            <div className="flex flex-1 flex-row gap-6 w-full">
-              <div className="md:h-[10vh]">
-                <p className="md:text-[30px] text-white">Kaipa Siddharth Rao</p>
-                <p className="md:text-[30px] text-white">Karthik Namboori</p>
-              </div>
-              <div>
-                <p className="md:text-[30px] text-white">Krishna Bhat</p>
-                <p className="md:text-[30px] text-white">Keshav Dalmia</p>
-              </div>
-            </div>
+          
           </motion.div>
           <motion.div {...headContentAnimation} className="my-9 mx-4">
             <span
