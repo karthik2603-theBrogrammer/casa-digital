@@ -9,5 +9,5 @@ services:
     restart: always
 
 
-# BETA VERSION - have to test still else use
+have to test still else use
 # docker run --name hivemq-ce -d -p 1883:1883 hivemq/hivemq-ce
