@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  hivemq-ce:
+    image: hivemq/hivemq-ce
+    container_name: hivemq-ce
+    ports:
+      - "1883:1883"
+    restart: always
+
+
+# BETA VERSION - have to test still else use
+# docker run --name hivemq-ce -d -p 1883:1883 hivemq/hivemq-ce
