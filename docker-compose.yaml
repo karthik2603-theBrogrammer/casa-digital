@@ -9,6 +9,7 @@ services:
     restart: always
 
 
+
   zookeeper:
     image: confluentinc/cp-zookeeper:7.3.2
     container_name: zookeeper
@@ -51,3 +52,7 @@ services:
 
 # BETA VERSION - have to test still else use
 # docker run --name hivemq-ce -d -p 1883:1883 hivemq/hivemq-ce
+
+# have to test still else use
+# docker run --name hivemq-ce -d -p 1883:1883 hivemq/hivemq-ce
+
