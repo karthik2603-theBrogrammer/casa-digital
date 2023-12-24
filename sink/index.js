@@ -5,7 +5,7 @@ const { Client } = c;
 
 const init = async () => {
   try {
-    const jsonFilePath = "config.json";
+    const jsonFilePath = "../config.json";
     const data = await fs.readFile(jsonFilePath, "utf8");
     const jsonFileData = JSON.parse(data);
     console.log(jsonFileData);

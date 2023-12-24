@@ -9,6 +9,9 @@
   "kafka": {
     "bootstrap_servers": "localhost:9092"
   },
+  "mqttBroker": {
+    "bootstrap_servers": "mqtt://broker.hivemq.com"
+  },
   "docker": {
     "timescale_config": {
       "user": "postgres",
