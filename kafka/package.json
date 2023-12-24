@@ -1,5 +1,5 @@
 {
-  "name": "mqtt-subscriber",
+  "name": "kafka",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mqtt": "^5.3.4"
+    "kafkajs": "^2.2.4"
   }
 }

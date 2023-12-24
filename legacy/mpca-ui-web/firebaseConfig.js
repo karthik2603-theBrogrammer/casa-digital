@@ -1,4 +1,5 @@
-// Import the functions you need from the SDKs you need
+// DISCLAIMER = LEGACY CODE. CasaDigital V1 ©️
+
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -6,12 +7,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBBNBKon4xO7uS3Zl78o0nKtQhz7QogN3k",
-  authDomain: "travel-tracking-app.firebaseapp.com",
-  projectId: "travel-tracking-app",
-  storageBucket: "travel-tracking-app.appspot.com",
-  messagingSenderId: "17348634605",
-  appId: "1:17348634605:web:c9faca5feff7a6e47429e4"
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
 };
 
 // Initialize Firebase

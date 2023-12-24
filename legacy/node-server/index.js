@@ -1,3 +1,5 @@
+// DISCLAIMER = LEGACY CODE. CasaDigital V1 ©️
+
 const express = require("express");
 const app = express();
 const cors = require("cors");
