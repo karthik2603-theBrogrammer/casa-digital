@@ -8,8 +8,6 @@ services:
       - "1883:1883"
     restart: always
 
-
-
   zookeeper:
     image: confluentinc/cp-zookeeper:7.3.2
     container_name: zookeeper
