@@ -18,7 +18,7 @@ Casa Digital is a real-time IoT data monitoring system designed for smart home p
 
 1. Clone the Repository:
 ```
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/karthik2603-theBrogrammer/casa-digital.git
 ```
 2. Modify the ```config.json``` file in the root, as per your needs.
 ```
